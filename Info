@@ -2,3 +2,7 @@ Before using this bot, download the NLTK and SciKit-Learn library by following t
 
 pip install scikit-learn
 pip install nltk
+
+TF-IDF Vectoriser better understands user input, thus responses will be formed with more accuracy. 
+
+Sentiment analysis better understands the user's tone/intent, hence providing more  tailored responses accordingly. 
