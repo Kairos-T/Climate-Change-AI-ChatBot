@@ -36,3 +36,5 @@ def start_chatbot():
 
 # call the function to start the chatbot
 start_chatbot()
+
+#Extremely limited functionalities, only 3 questions that the bot can answer.
