@@ -1,0 +1,4 @@
+Before using this bot, download the NLTK and SciKit-Learn library by following these commands in your command promt / terminal:
+
+pip install scikit-learn
+pip install nltk

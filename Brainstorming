@@ -7,3 +7,22 @@ Climate change x Education
     3. Rasa
     4. Dialogflow
     5. BotStar
+
+Bot functions:
+- Sentiment analyser
+- NLP responses
+- Suggestion (Climate friendly actions)
+- Informative climate change education
+
+Qns:
+- Which library/ies to use 
+- How to implement functions
+- What are the sample responses
+- What info is needed? What should I teach the bot
+- How to prompt users?
+- Should responses be random? (for some)
+
+Others:
+- TF-IDF vectoriser? 
+    - Better understand user input
+    - Accuracy 
