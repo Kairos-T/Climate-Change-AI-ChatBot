@@ -11,7 +11,7 @@ nltk.download('wordnet')
 
 lemmatizer = WordNetLemmatizer()
 
-# Sample responses to different intents
+# Sample responses to different intents (Read Info for more clarity)
 GREETINGS = ["Hello!", "Hi there!", "Greetings!", "Hey!"]
 GOODBYES = ["Goodbye!", "See you later!", "Bye!", "Have a nice day!"]
 AFFIRMATIONS = ["Okay", "Got it", "Sure", "Yes"]
@@ -21,13 +21,13 @@ CLIMATE_INFO = ["Climate change is caused by human activities, such as burning f
                 "Rising temperatures are causing more frequent and severe weather patterns, such as heat waves and hurricanes.",
                 "Reducing your carbon footprint by conserving energy and resources is one way to combat climate change."]
 
-# Sample questions to prompt user for input
+# Sample questions to prompt user for input 
 GREETINGS_PROMPT = ["Hello! How can I assist you today?", "Hi there! What can I help you with?", "Greetings! What brings you here?"]
 HELP_PROMPT = ["What do you need help with?", "How can I assist you?", "What can I help you with today?"]
 CLIMATE_PROMPT = ["Do you have any questions about climate change?", "What would you like to know about climate change?",
                   "Can I provide you with any information on climate change?"]
 
-# Responses based on user input
+# Responses based on user input (Info for more clarity)
 RESPONSES = {
     "greetings": GREETINGS,
     "goodbyes": GOODBYES,
@@ -58,7 +58,7 @@ def climate_info():
 
 
 def generate_response(user_input):
-    # Clean and tokenize user input
+    # Clean and tokenise user input
     input_tokens = nltk.word_tokenize(user_input.lower())
     input_tokens = [lemmatizer.lemmatize(token) for token in input_tokens if token not in string.punctuation]
 
@@ -75,7 +75,7 @@ def generate_response(user_input):
     return RESPONSES["generic"][closest_match_index]
 
 
-# Start the chatbot
+# X Start X
 print("Welcome to the Climate Change Education Chatbot! How can I assist you today?")
 user_response = input()
 
