@@ -18,7 +18,33 @@ NEGATIONS = ["No", "Not really", "Sorry"]
 CLIMATE_INFO = ["Climate change is caused by human activities, such as burning fossil fuels and deforestation.",
                 "Global warming is the long-term warming of the planet's overall temperature.",
                 "Rising temperatures are causing more frequent and severe weather patterns, such as heat waves and hurricanes.",
-                "Reducing your carbon footprint by conserving energy and resources is one way to combat climate change."]
+                "Reducing your carbon footprint by conserving energy and resources is one way to combat climate change."
+                "Climate change is caused by human activities, such as burning fossil fuels and deforestation.",
+                "The Earth's temperature is rising due to greenhouse gas emissions from human activities.",
+                "The effects of climate change include rising sea levels, more frequent extreme weather events, and loss of biodiversity.",
+                "Reducing carbon emissions and transitioning to renewable energy sources are important steps in combating climate change.",
+                "Individual actions, such as using energy-efficient appliances and reducing meat consumption, can also help mitigate climate change."
+                "Climate change is causing shifts in weather patterns, resulting in longer and more severe droughts, heat waves, and floods.",
+                "Melting ice caps are causing sea levels to rise, which threatens to flood low-lying areas and displace millions of people.",
+                "The changing climate is affecting wildlife, causing some species to migrate to new areas or struggle to survive.",
+                "Scientists have predicted that without action to address climate change, global temperatures could rise by several degrees Celsius by the end of the century.",
+                "Climate change is a global problem that requires coordinated international action to address."
+                "The Arctic sea ice is melting at a rate of 12.8% per decade."
+                "The global sea level has risen about 8 inches since 1880, with almost half of that rise occurring in the last 25 years."
+                r"The ocean has absorbed 93% of the extra heat from greenhouse gas emissions since the 1970s, leading to warmer and more acidic waters."
+                "Carbon dioxide concentration in the atmosphere has reached 419 parts per million, the highest level in at least 800,000 years."
+                "The world's glaciers are shrinking at an accelerated pace, losing 267 billion metric tons of ice per year on average between 2000 and 2019."
+                "Climate change is exacerbating wildfires, making them more frequent and intense."
+                "Climate change is causing more frequent and severe heat waves, which can lead to heat exhaustion and other health problems."
+                r"The ocean's acidity has increased by 30% since the Industrial Revolution, making it harder for shellfish and other marine organisms to survive."
+                "Climate change is causing coral reefs to bleach and die off, leading to the loss of biodiversity in marine ecosystems."
+                "Climate change is causing more frequent and intense hurricanes and cyclones, leading to greater destruction and loss of life."
+                "Climate change is causing more frequent and intense flooding, displacing millions of people each year."
+                "Climate change is causing disruptions in global food production, with yields of staple crops like wheat and maize projected to decline in many regions."
+                "Climate change is exacerbating water scarcity in many parts of the world, with an estimated 1.8 billion people living in areas with inadequate water supply."
+                "Climate change is causing the migration and extinction of many species, disrupting entire ecosystems."
+                "Climate change is projected to cost the global economy trillions of dollars in damages and lost productivity over the next century."
+]
 
 # Sample questions to prompt user for input 
 GREETINGS_PROMPT = ["Hello! How can I assist you today?", "Hi there! What can I help you with?", "Greetings! What brings you here?"]
@@ -65,6 +91,27 @@ def generate_response(user_input):
         "The effects of climate change include rising sea levels, more frequent extreme weather events, and loss of biodiversity.",
         "Reducing carbon emissions and transitioning to renewable energy sources are important steps in combating climate change.",
         "Individual actions, such as using energy-efficient appliances and reducing meat consumption, can also help mitigate climate change."
+        "Climate change is causing shifts in weather patterns, resulting in longer and more severe droughts, heat waves, and floods.",
+        "Melting ice caps are causing sea levels to rise, which threatens to flood low-lying areas and displace millions of people.",
+        "The changing climate is affecting wildlife, causing some species to migrate to new areas or struggle to survive.",
+        "Scientists have predicted that without action to address climate change, global temperatures could rise by several degrees Celsius by the end of the century.",
+        "Climate change is a global problem that requires coordinated international action to address."
+        "The Arctic sea ice is melting at a rate of 12.8% per decade."
+        "The global sea level has risen about 8 inches since 1880, with almost half of that rise occurring in the last 25 years."
+        r"The ocean has absorbed 93% of the extra heat from greenhouse gas emissions since the 1970s, leading to warmer and more acidic waters."
+        "Carbon dioxide concentration in the atmosphere has reached 419 parts per million, the highest level in at least 800,000 years."
+        "The world's glaciers are shrinking at an accelerated pace, losing 267 billion metric tons of ice per year on average between 2000 and 2019."
+        "Climate change is exacerbating wildfires, making them more frequent and intense."
+        "Climate change is causing more frequent and severe heat waves, which can lead to heat exhaustion and other health problems."
+        r"The ocean's acidity has increased by 30% since the Industrial Revolution, making it harder for shellfish and other marine organisms to survive."
+        "Climate change is causing coral reefs to bleach and die off, leading to the loss of biodiversity in marine ecosystems."
+        "Climate change is causing more frequent and intense hurricanes and cyclones, leading to greater destruction and loss of life."
+        "Climate change is causing more frequent and intense flooding, displacing millions of people each year."
+        "Climate change is causing disruptions in global food production, with yields of staple crops like wheat and maize projected to decline in many regions."
+        "Climate change is exacerbating water scarcity in many parts of the world, with an estimated 1.8 billion people living in areas with inadequate water supply."
+        "Climate change is causing the migration and extinction of many species, disrupting entire ecosystems."
+        "Climate change is projected to cost the global economy trillions of dollars in damages and lost productivity over the next century."
+
     ]
     
     goodbye_responses = [
