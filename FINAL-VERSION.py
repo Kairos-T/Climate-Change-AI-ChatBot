@@ -3,8 +3,7 @@ import string
 
 import nltk
 from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+from gensim import corpora, models, similarities
 
 nltk.download('punkt')
 nltk.download('wordnet')
@@ -36,44 +35,41 @@ RESPONSES = {
     "climate_info": CLIMATE_INFO
 }
 
+# Preprocess text
+def preprocess_text(text):
+    # Tokenize text
+    tokens = nltk.word_tokenize(text.lower())
+    # Remove punctuation
+    tokens = [token for token in tokens if token not in string.punctuation]
+    # Lemmatize tokens
+    tokens = [lemmatizer.lemmatize(token) for token in tokens]
+    return tokens
 
-def greeting():
-    return random.choice(GREETINGS)
+# Create dictionary and corpus
+texts = CLIMATE_INFO
+texts = [preprocess_text(text) for text in texts]
+dictionary = corpora.Dictionary(texts)
+corpus = [dictionary.doc2bow(text) for text in texts]
 
+# Create tf-idf model
+tfidf = models.TfidfModel(corpus)
 
-def goodbye():
-    return random.choice(GOODBYES)
+# Create index
+index = similarities.MatrixSimilarity(tfidf[corpus])
 
-
-def affirmation():
-    return random.choice(AFFIRMATIONS)
-
-
-def negation():
-    return random.choice(NEGATIONS)
-
-
-def climate_info():
-    return random.choice(CLIMATE_INFO)
-
-
+# Generate response
 def generate_response(user_input):
-    # Clean and tokenise user input
-    input_tokens = nltk.word_tokenize(user_input.lower())
-    input_tokens = [lemmatizer.lemmatize(token) for token in input_tokens if token not in string.punctuation]
-
-    # Check for keyword matches in input
-    for intent, keywords in KEYWORDS.items():
-        for keyword in keywords:
-            if keyword in input_tokens:
-                return random.choice(RESPONSES[intent])
-
-    # If no keyword matches, generate response based on similarity to previous inputs
-    tfidf_input = tfidf_vectorizer.transform([user_input])
-    similarities = cosine_similarity(tfidf_input, tfidf_responses)[0]
+    # Preprocess user input
+    input_tokens = preprocess_text(user_input)
+    # Create tf-idf vector
+    input_bow = dictionary.doc2bow(input_tokens)
+    input_tfidf = tfidf[input_bow]
+    # Get similarities
+    similarities = index[input_tfidf]
+    # Find closest match
     closest_match_index = similarities.argmax()
-    return RESPONSES["generic"][closest_match_index]
-
+    # Return response
+    return CLIMATE_INFO[closest_match_index]
 
 # X Start X
 print("Welcome to the Climate Change Education Chatbot! How can I assist you today?")
@@ -87,8 +83,30 @@ while user_response.lower() != "bye":
     if response in GREETINGS:
         print(random.choice(GREETINGS_PROMPT))
     elif response in HELP_PROMPT:
-        print(random.choice(CLIMATE_PROMPT))
+        print(random.choice(HELP_PROMPT))
 
-    user_response = input()
+import gensim
+from gensim import corpora, models, similarities
 
-print(goodbye())
+dictionary = corpora.Dictionary(RESPONSES.values())
+corpus = [dictionary.doc2bow(text) for text in RESPONSES.values()]
+tfidf = models.TfidfModel(corpus)
+
+def generate_response(user_input):
+    # Clean and tokenize user input
+    input_tokens = nltk.word_tokenize(user_input.lower())
+    input_tokens = [lemmatizer.lemmatize(token) for token in input_tokens if token not in string.punctuation]
+
+    # Check for keyword matches in input
+    for intent, keywords in KEYWORDS.items():
+        for keyword in keywords:
+            if keyword in input_tokens:
+                return random.choice(RESPONSES[intent])
+
+    # If no keyword matches, generate response based on similarity to previous inputs
+    vec_bow = dictionary.doc2bow(input_tokens)
+    vec_tfidf = tfidf[vec_bow]
+    index = similarities.MatrixSimilarity(tfidf[corpus])
+    sims = index[vec_tfidf]
+    closest_match_index = sims.argmax()
+    return RESPONSES["generic"][closest_match_index]
