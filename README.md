@@ -1,4 +1,4 @@
-# Climate Change Chatbot
+# Climate Change Chatbot - ChatGPT x BerriAI Hackathon Submission
 
 The Climate Change Chatbot is a Python program that provides information on climate change in response to user input. It uses natural language processing techniques to understand user queries and generates appropriate responses. The chatbot is designed to educate users about climate change and encourage them to take action to reduce their carbon footprint.
 
