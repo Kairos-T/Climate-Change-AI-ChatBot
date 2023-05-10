@@ -59,17 +59,39 @@ index = similarities.MatrixSimilarity(tfidf[corpus])
 
 # Generate response
 def generate_response(user_input):
-    # Preprocess user input
-    input_tokens = preprocess_text(user_input)
-    # Create tf-idf vector
-    input_bow = dictionary.doc2bow(input_tokens)
-    input_tfidf = tfidf[input_bow]
-    # Get similarities
-    similarities = index[input_tfidf]
-    # Find closest match
-    closest_match_index = similarities.argmax()
-    # Return response
-    return CLIMATE_INFO[closest_match_index]
+    climate_responses = [
+        "Climate change is caused by human activities, such as burning fossil fuels and deforestation.",
+        "The Earth's temperature is rising due to greenhouse gas emissions from human activities.",
+        "The effects of climate change include rising sea levels, more frequent extreme weather events, and loss of biodiversity.",
+        "Reducing carbon emissions and transitioning to renewable energy sources are important steps in combating climate change.",
+        "Individual actions, such as using energy-efficient appliances and reducing meat consumption, can also help mitigate climate change."
+    ]
+    
+    goodbye_responses = [
+        "Goodbye!",
+        "Thanks for chatting. Goodbye!",
+        "It was nice talking to you. Goodbye!",
+        "See you later!",
+        "Take care!"
+    ]
+
+    user_input = user_input.lower()
+
+    if "climate" in user_input:
+        return random.choice(climate_responses)
+    elif "bye" in user_input:
+        return random.choice(goodbye_responses)
+    else:
+        return "I'm sorry, I didn't understand what you were trying to say. Can you please rephrase?"
+        
+print("Hello! Let's talk about climate change.")
+while True:
+    user_input = input("You: ")
+    response = generate_response(user_input)
+    print("Bot:", response)
+    if "bye" in user_input:
+        break
+
 
 # X Start X
 print("Welcome to the Climate Change Education Chatbot! How can I assist you today?")
@@ -85,8 +107,8 @@ while user_response.lower() != "bye":
     elif response in HELP_PROMPT:
         print(random.choice(HELP_PROMPT))
 
-import gensim
-from gensim import corpora, models, similarities
+
+
 
 dictionary = corpora.Dictionary(RESPONSES.values())
 corpus = [dictionary.doc2bow(text) for text in RESPONSES.values()]
@@ -110,3 +132,4 @@ def generate_response(user_input):
     sims = index[vec_tfidf]
     closest_match_index = sims.argmax()
     return RESPONSES["generic"][closest_match_index]
+
