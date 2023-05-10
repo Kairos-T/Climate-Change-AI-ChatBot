@@ -1,32 +1,33 @@
-# ChatGPTxBerriAI Hackathon
- Event details
- About Event
-​Join BerriAI, Replit, OpenaAI, Cerebrium and PropelAuth as we take on our biggest challenge yet - the World's Largest chatGPT Hackathon!
+# Climate Change Chatbot
 
-​Whether you're an experienced developer or just starting out, this event is the perfect opportunity to put your skills to the test and make new connections with fellow enthusiasts.
+The Climate Change Chatbot is a Python program that provides information on climate change in response to user input. It uses natural language processing techniques to understand user queries and generates appropriate responses. The chatbot is designed to educate users about climate change and encourage them to take action to reduce their carbon footprint.
 
-​Featuring:
-​A hybrid 24hr event with an in-person component in SF! (In-person event from 9am-6pm on 4/15, location to be sent out to registered participants before the event)
+## Installation
 
-​4 Surprise STAR speakers + lightning workshops (including Raza Habib of Human Loop)
+To use the Climate Change Chatbot, you will need to install Python 3.x and the following libraries:
 
-​$7500 worth of prizes
+- nltk
+- gensim
 
-​Requirements:
-​The sky's the limit! But here's some themes and general categories we think would be great to build in (and ++++ points if you use Berri and any/all of our co-sponsors!)
+You can install these libraries using pip:
 
-​Suggested Themes:
+```
+pip install nltk gensim
+```
 
-​How do you bring the power of ChatGPT to your end-users?
+## Usage
 
-​How can conversational AI improve B2B or B2C relationships/tasks?
+To start the chatbot, simply run the script.
+The chatbot will greet you and prompt you to ask a question or provide a command. You can ask questions about climate change, or use the following commands:
 
-​Tracks
+- "help" to get assistance
+- "exit" to quit the chatbot
 
-​Education
+The chatbot will respond with relevant information on climate change, or provide assistance if you ask for help.
 
-​Healthcare
+## Development
 
-​Customer Support
+The Climate Change Chatbot was developed using Python 3.x and the following libraries:
 
-​Climate Change
+- nltk
+- gensim
